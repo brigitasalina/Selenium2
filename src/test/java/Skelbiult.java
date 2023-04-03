@@ -6,9 +6,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
-
 import java.time.Duration;
 import java.util.concurrent.TimeUnit;
+import static org.testng.Assert.*;
 
 public class Skelbiult {
     public WebDriver driver;
@@ -21,6 +21,7 @@ public class Skelbiult {
         oneTrustBtn.click();
         driver.findElement(By.id("searchKeyword")).sendKeys("garu puodas");
         driver.findElement(By.id("searchButton")).click();
+//        assertTrue(driver.findElement(By.xpath("//*[@id=\"body-container\"]/div[2]")).getText().contains("Visi skelbimai"));
 
     }
 
@@ -31,6 +32,7 @@ public class Skelbiult {
          driver = new ChromeDriver();
          driver.manage().window().maximize();
          driver. manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+
    }
 
    @AfterClass
